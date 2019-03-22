@@ -1,28 +1,47 @@
-# Write a module that will simulate autonomic car.
-# The simulation is event based, an example:
-# car1 = Car()
-# car1.act(event)
-# print(car1.wheel_angle, car1.speed)
-# where event can be anything you want, i.e. :
-# `('obstacle', 10)` where `10` is a duration (time) of the event.
-##The program should:
-# - act on the event
-# - print out current steering wheel angle, and speed
-# - run in infinite loop
-# - until user breaks the loop
-
-#The level of realism in simulation is of your choice, but more sophisticated solutions are better.
-#If you can thing of any other features, you can add them.
-#Make intelligent use of pythons syntactic sugar (overloading, iterators, generators, etc)
-#Most of all: CREATE GOOD, RELIABLE, READABLE CODE.
-#The goal of this task is for you to SHOW YOUR BEST python programming skills.
-#Impress everyone with your skills, show off with your code.
-#
-#Your program must be runnable with command "python task.py".
-#Show some usecases of your library in the code (print some things)
-#
-#When you are done upload this code to github repository. 
-#
-#Delete these comments before commit!
-#Good luck.
+    from math import cos, sin
+    from random import choice, randrange
+    from time import sleep
     
+    
+    class Car:
+        def _init_(self, angle, speed, model)
+            self.angle = angle
+            self.speed = speed
+            self.x = 0
+            self.y = 0
+        def handle_event(self, event)
+            print("The car enountered ", event.object, "\n Restarting in ", event.duration, " seconds")
+            sleep(event.duration)
+        def move(self)
+            self.x = x+speed*cos(angle % 180)
+            self.y = y+speed*sin(angle % 180)
+            print("The car is now at ", self.x, ", ", self.y)
+        def turn(self, angle)
+            self.angle = self.angle + angle
+        def slow(self, speed)
+            self.speed = self.speed - speed
+        def accelerate(self, speed)
+            self.speed = self.speed + speed
+            
+            
+        
+    class Event:
+        def _init_(self, event_object, duration)
+            self.object = event_object
+            self.duration = duration
+        
+    def main():
+        car1 = Car(45, 100)
+        event1 = Event("other car", 1)
+        event2 = Event("tree", 5)
+        event3 = Event("other car", 3)
+        event_list = [event1, event2, event3]
+            while True:
+                car1.handle_event(choice(event_list)
+                car1.move
+                car1.turn(randrange(0, 360))
+                car1.slow(randrange(0, 100))
+                car1.accelerate(randrange(0, 100)
+         
+                
+        

@@ -37,11 +37,11 @@
         event3 = Event("other car", 3)
         event_list = [event1, event2, event3]
             while True:
-                car1.handle_event(choice(event_list)
-                car1.move
+                car1.handle_event(choice(event_list))
+                car1.move()
                 car1.turn(randrange(0, 360))
                 car1.slow(randrange(0, 100))
-                car1.accelerate(randrange(0, 100)
+                car1.accelerate(randrange(0, 100))
          
                 
         

@@ -13,8 +13,8 @@
             print("The car enountered ", event.object, "\n Restarting in ", event.duration, " seconds")
             sleep(event.duration)
         def move(self):
-            self.x = x+speed*cos(angle % 180)
-            self.y = y+speed*sin(angle % 180)
+            self.x = x+self.speed*cos(self.angle % 180)
+            self.y = y+self.speed*sin(self.angle % 180)
             print("The car is now at ", self.x, ", ", self.y)
         def turn(self, angle):
             self.angle = self.angle + angle

@@ -9,24 +9,24 @@
             self.speed = speed
             self.x = 0
             self.y = 0
-        def handle_event(self, event)
+        def handle_event(self, event):
             print("The car enountered ", event.object, "\n Restarting in ", event.duration, " seconds")
             sleep(event.duration)
-        def move(self)
+        def move(self):
             self.x = x+speed*cos(angle % 180)
             self.y = y+speed*sin(angle % 180)
             print("The car is now at ", self.x, ", ", self.y)
-        def turn(self, angle)
+        def turn(self, angle):
             self.angle = self.angle + angle
-        def slow(self, speed)
+        def slow(self, speed):
             self.speed = self.speed - speed
-        def accelerate(self, speed)
+        def accelerate(self, speed):
             self.speed = self.speed + speed
             
             
         
     class Event:
-        def _init_(self, event_object, duration)
+        def _init_(self, event_object, duration):
             self.object = event_object
             self.duration = duration
         
